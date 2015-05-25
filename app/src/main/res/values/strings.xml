@@ -10,4 +10,9 @@
     <string name="title_activity_mylist">mylist</string>
     <string name="title_activity_sincronizar">Sincronizar</string>
     <string name="title_activity_leidos">Leidos</string>
+    <string name="title_seleccionar_rutas">Seleccione la ruta para relevar</string>
+    <string name="title_activity_releva_medidor">Lectura de Medidor</string>
+    <string name="title_activity_lectura">lectura</string>
+    <string name="title_codigo_observacion">Código de observación</string>
+
 </resources>

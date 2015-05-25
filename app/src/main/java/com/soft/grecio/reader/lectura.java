@@ -6,30 +6,29 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
-public class Rutas extends Activity {
+public class lectura extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rutas);
+        setContentView(R.layout.activity_lectura);
         findViewById(R.id.btnAceptar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Rutas.this, RelevaMedidor.class));
+                Toast.makeText(getApplicationContext(), "Guardado con exito", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(lectura.this, RelevaMedidor.class));
             }
         });
-
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_rutas, menu);
+        getMenuInflater().inflate(R.menu.menu_lectura, menu);
         return true;
-
     }
 
     @Override

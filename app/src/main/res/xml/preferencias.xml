@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="preferencias_principal">
+    <CheckBoxPreference
+        android:key="musica"
+        android:title="reproducir musica"
+        android:summary="se reproduce musica de fondo"
+        />
+    <ListPreference
+        android:key="musica"
+        android:title="reproducir musica"
+        android:summary="se reproduce musica de fondo"
+        android:entries="@array/rutas"
+        android:entryValues="@array/rutasId"
+        android:defaultValue="1"/>
+    <EditTextPreference
+        android:key="fragmentos"
+        android:title="Número de Fragmentos"
+        android:summary="En cuantos frag se divide el asteroide"
+        android:defaultValue="1"/>
+</PreferenceScreen>

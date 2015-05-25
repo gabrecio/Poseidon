@@ -32,6 +32,16 @@
             android:name=".Leidos"
             android:label="@string/title_activity_leidos" >
         </activity>
+        <activity
+            android:name=".RelevaMedidor"
+            android:label="@string/title_activity_releva_medidor" >
+        </activity>
+        <activity
+            android:name=".lectura"
+            android:label="@string/title_activity_lectura" >
+        </activity>
     </application>
 
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
 </manifest>

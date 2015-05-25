@@ -71,6 +71,7 @@ public class MainActivity extends Activity {
                         System.exit(0);
                         break;
                     case "Rutas":
+
                         startActivity(new Intent(MainActivity.this, Rutas.class));
                         break;
                     case "Medidor":

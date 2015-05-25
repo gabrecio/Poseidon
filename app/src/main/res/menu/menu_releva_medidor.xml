@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.soft.grecio.reader.RelevaMedidor"
+    >
+    <item
+        android:id="@+id/cero"
+        android:title="00 Sin incidencia"
+        android:checked="true"/>
+
+    <item
+        android:id="@+id/uno"
+        android:title="01 Med. en cero"
+        android:checked="true"/>
+
+    <item
+        android:id="@+id/dos"
+        android:title="02 Med. roto sin lectura"
+        android:checked="true"/>
+    <item
+        android:id="@+id/tres"
+        android:title="03 Med. detenido"
+        android:checked="true"/>
+    <item
+        android:id="@+id/cuatro"
+        android:title="04 Med. roto c/lectura"
+        android:checked="true"/>
+    <item
+        android:id="@+id/cinco"
+        android:title="05 Med. sucio c/lectura"
+        android:checked="true"/>
+</menu>
