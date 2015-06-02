@@ -89,7 +89,7 @@ public class ListSelectorDialog {
                 di.selectedItem(keyList[n], itemList[n]);
             }
         });
-        adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        adb.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             // when user clicks cancel, notify our interface
             public void onClick(DialogInterface d, int n) {
                 d.dismiss();

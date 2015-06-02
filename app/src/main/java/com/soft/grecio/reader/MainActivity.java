@@ -3,6 +3,7 @@ package com.soft.grecio.reader;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.database.SQLException;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -15,6 +16,10 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.soft.grecio.reader.model.Ruta;
+
+import java.io.IOException;
+
 
 public class MainActivity extends Activity {
     ListView list;
@@ -23,7 +28,7 @@ public class MainActivity extends Activity {
             "Medidor",
             "Leidos",
             "No Leidos",
-            "Sincronizar",
+            "BackUps",
             "Acerca de",
             "Salir"
     };
@@ -39,7 +44,7 @@ public class MainActivity extends Activity {
 
     Integer[] imgid={
             R.mipmap.ic_ruta,
-            R.mipmap.ic_medidor,
+            R.mipmap.ic_watermeter,
             R.mipmap.ic_leidos,
             R.mipmap.ic_launcher,
             R.mipmap.ic_sincronizar,
@@ -50,8 +55,38 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DataBase myDbHelper = new DataBase(this);
 
+        /**
+         * CRUD Operations
+         * */
+        // add Rutas
+       /* myDbHelper.addRuta(new Ruta("001", "Libertador y Balcarce","Sta Lucia"));
+        myDbHelper.addRuta(new Ruta("002", "Roque Saenz Peña y Balcarce","Sta Lucia"));
+        myDbHelper.addRuta(new Ruta("003", "Loteo privado","Sta Lucia"));
+        myDbHelper.addRuta(new Ruta("004", "Del Bono","Desamparados"));
+        myDbHelper.addRuta(new Ruta("005", "sierras azules","zonda"));
+        myDbHelper.addRuta(new Ruta("006", "huaco","jachal"));*/
 
+    /*    try {
+
+            myDbHelper.createDataBase();
+
+        } catch (IOException ioe) {
+
+            throw new Error("Unable to create database");
+
+        }
+
+        try {
+
+            myDbHelper.openDataBase();
+
+        }catch(SQLException sqle){
+
+            throw sqle;
+
+        }*/
 
         CustomListAdapter adapter=new CustomListAdapter(this, itemname, imgid, description);
         list=(ListView)findViewById(R.id.list);
@@ -83,7 +118,7 @@ public class MainActivity extends Activity {
                     case "No Leidos":
                         Toast.makeText(getApplicationContext(), Selecteditem, Toast.LENGTH_SHORT).show();
                         break;
-                    case "Sincronizar":
+                    case "BackUps":
                         startActivity(new Intent(MainActivity.this, Sincronizar.class));
                         break;
                     case "Acerca de":
@@ -93,9 +128,6 @@ public class MainActivity extends Activity {
                         Toast.makeText(getApplicationContext(), Selecteditem, Toast.LENGTH_SHORT).show();
                         break;
                 }
-
-
-
             }
         });
     }

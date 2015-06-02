@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Reader</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_activity_rutas">activity_rutas</string>
@@ -12,7 +12,7 @@
     <string name="title_activity_leidos">Leidos</string>
     <string name="title_seleccionar_rutas">Seleccione la ruta para relevar</string>
     <string name="title_activity_releva_medidor">Lectura de Medidor</string>
-    <string name="title_activity_lectura">lectura</string>
+    <string name="title_activity_lectura">Cargar Lectura de Medidor</string>
     <string name="title_codigo_observacion">Código de observación</string>
 
 </resources>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -11,58 +12,10 @@ android:orientation="vertical"
         android:layout_height="wrap_content"
         android:id="@+id/textView" />
 
-    <RadioGroup
-        android:id="@+id/radiobuttons"
+    <!-- tools:context=".MainActivity"-->
+    <ListView
+        android:id="@+id/listRutas"
         android:layout_width="match_parent"
-        android:layout_height="211dp"
-        android:paddingTop="35px"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:background="#ffb3d3ff">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lib y Urquiza"
-            android:id="@+id/radioButton"
-            android:layout_gravity="left" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lib y Zavalla"
-            android:id="@+id/radioButton2"
-            android:layout_gravity="left" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Central y Paula"
-            android:id="@+id/radioButton3"
-            android:layout_gravity="left" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ramon y Cajal"
-            android:id="@+id/radioButton4"
-            android:layout_gravity="left" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Central y Urquiza"
-            android:id="@+id/radioButton5"
-            android:layout_gravity="left" />
-
-
-    </RadioGroup>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Aceptar"
-        android:id="@+id/btnAceptar"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal" />
+        android:layout_height="wrap_content" >
+    </ListView>
 </LinearLayout>

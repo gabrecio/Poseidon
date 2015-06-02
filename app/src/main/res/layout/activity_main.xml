@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:showDividers="middle"
     android:divider="?android:dividerHorizontal"
-    android:background="#ffa3c6ff"
+    android:background="#07a2c5fd"
     tools:context="${relativePackage}.${activityClass}"
     >
     <!-- tools:context=".MainActivity"-->
