@@ -14,5 +14,10 @@
     <string name="title_activity_releva_medidor">Lectura de Medidor</string>
     <string name="title_activity_lectura">Cargar Lectura de Medidor</string>
     <string name="title_codigo_observacion">Código de observación</string>
+    <string name="title_activity_leidos_buscar">LeidosBuscar</string>
+    <string name="title_activity_leidos_mostrar">LeidosMostrar</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

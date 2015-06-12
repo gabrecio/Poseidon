@@ -33,9 +33,9 @@ public class MainActivity extends Activity {
             "Salir"
     };
     String[] description ={
-            "Rutas disponibles para lectura",
+            "Cargar lecturas por ruta",
             "Busca por número de medidor",
-            "Cantidad de medidores leidos",
+            "Buscar lecturas",
             "Cantidad de medidores No Leidos",
             "Sincronizar los datos leidos",
             "Acerca de",
@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
          * CRUD Operations
          * */
         // add Rutas
-       /* myDbHelper.addRuta(new Ruta("001", "Libertador y Balcarce","Sta Lucia"));
+    /*  myDbHelper.addRuta(new Ruta("001", "Libertador y Balcarce","Sta Lucia"));
         myDbHelper.addRuta(new Ruta("002", "Roque Saenz Peña y Balcarce","Sta Lucia"));
         myDbHelper.addRuta(new Ruta("003", "Loteo privado","Sta Lucia"));
         myDbHelper.addRuta(new Ruta("004", "Del Bono","Desamparados"));
@@ -106,7 +106,6 @@ public class MainActivity extends Activity {
                         System.exit(0);
                         break;
                     case "Rutas":
-
                         startActivity(new Intent(MainActivity.this, Rutas.class));
                         break;
                     case "Medidor":

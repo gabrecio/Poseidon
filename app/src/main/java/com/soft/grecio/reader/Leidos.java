@@ -1,100 +1,67 @@
 package com.soft.grecio.reader;
 
-import android.app.Activity;
+
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
-
+import android.view.Window;
 import com.soft.grecio.reader.model.Lectura;
+import android.support.v4.app.FragmentTabHost;
 
 import java.util.List;
 
+@SuppressWarnings("deprecation")
+public class Leidos extends FragmentActivity {
 
-public class Leidos extends Activity {
-
-    int posicion = 0;
-    List<Lectura> lecturas;
-    public enum Movimiento {
-        NINGUNO, ADELANTE,ATRAS
-    }
-
+    private FragmentTabHost tabHost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_leidos);
 
-        DataBase db = new DataBase(this);
+        //creamos el contenedor de Tabs
+     /*   TabHost host = getTabHost();
+        //Añadimos cada tab, que al ser pulsadas abren sus respectivas Activities
+        TabHost.TabSpec photospec = host.newTabSpec("Buscar");
+        // setting Title and Icon for the Tab
+        photospec.setIndicator("Buscar2", getResources().getDrawable(R.drawable.icon_search_tab));
+        Intent photosIntent = new Intent(this, LeidosBuscar.class);
+        photospec.setContent(photosIntent);
+        // Adding all TabSpec to TabHost
+        host.addTab(photospec); // Adding photos tab
 
-        // get all lecturas
-        lecturas = db.getAllLecturas();
-        if(lecturas.size()>0) {
-            moverLectura(Movimiento.NINGUNO);
+
+        TabHost.TabSpec spec2=host.newTabSpec("mitab2");
+        spec2=host.newTabSpec("mitab2");
+        spec2.setIndicator("TAB2",getResources().getDrawable(R.drawable.icon_read_tab));
+        Intent sssIntent2 = new Intent(this, LeidosMostrar.class);
+        spec2.setContent(sssIntent2 );
+        host.addTab(spec2);*/
 
 
-        }
+       // host.addTab(host.newTabSpec("Buscar").setIndicator("Buscar", getResources().getDrawable(R.drawable.icon_search_tab)).setContent(new Intent(this, LeidosBuscar.class)));
+       // host.addTab(host.newTabSpec("Navegar").setIndicator("Navegar2",getResources().getDrawable(R.drawable.icon_read_tab)).setContent(new Intent(this, LeidosMostrar.class)));
+       // host.setCurrentTab(0);
+        tabHost= (FragmentTabHost) findViewById(android.R.id.tabhost);
+        tabHost.setup(this,
+                getSupportFragmentManager(), android.R.id.tabcontent);
+        View tabIndicatorLeidos = LayoutInflater.from(this).inflate(R.layout.tab_indicator,tabHost.getTabWidget(), false);
+        View tabIndicatorBuscar = LayoutInflater.from(this).inflate(R.layout.tab_indicator_buscar,tabHost.getTabWidget(), false);
 
-        findViewById(R.id.btnAnterior).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //  startActivity(new Intent(RelevaMedidor.this, Rutas.class));
-                if(posicion > 0) {
-                    moverLectura(Movimiento.ATRAS);
-                }
-            }
-        });
-        findViewById(R.id.btnSiguiente).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator(tabIndicatorLeidos),
+                LeidosMostrar.class, null);
+        tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator(tabIndicatorBuscar),
+                 LeidosBuscar.class, null);
 
-                if(lecturas.size() - 1 > posicion) {
-                    moverLectura(Movimiento.ADELANTE);
-                }
-            }
-        });
 
     }
 
-    private void moverLectura(Movimiento movimiento)
-    {
-        switch (movimiento) {
-            case ADELANTE:
-                    posicion++;
-                    break;
 
-            case ATRAS:
-                    posicion--;
-                    break;
-            case NINGUNO:
-                    posicion=0;
-                    break;
-        }
-
-
-                TextView lblRuta = (TextView) findViewById(R.id.lblRuta);
-                lblRuta.setText("Ruta: ");
-                TextView tvVivienda = (TextView) findViewById(R.id.lblVivienda);
-                tvVivienda.setText("Vivienda: " + lecturas.get(posicion).getIdVivienda());
-                TextView tvDireccion = (TextView) findViewById(R.id.lblDireccion);
-                tvDireccion.setText("Direccion: " + lecturas.get(posicion).getIdVivienda());
-
-                TextView tvMedidor = (TextView) findViewById(R.id.lblMedidor);
-                tvMedidor.setText("Medidor: " + lecturas.get(posicion).getIdVivienda());
-
-                TextView tvConsumo = (TextView) findViewById(R.id.lblConsumo);
-                tvConsumo.setText("Consumo: " + lecturas.get(posicion).getConsumo());
-
-                TextView tvFecha = (TextView) findViewById(R.id.lblFecha);
-                tvFecha.setText("Fecha: " + lecturas.get(posicion).getFecha());
-
-                TextView tvObservacion = (TextView) findViewById(R.id.lblObservaciones);
-                tvObservacion.setText("Observacion: " + lecturas.get(posicion).getObservacion());
-
-                TextView tvCodigoObservacion = (TextView) findViewById(R.id.lblCodigoObservacion);
-                tvCodigoObservacion.setText("Codigo Observacion: " + lecturas.get(posicion).getCodigoObservacion());
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
